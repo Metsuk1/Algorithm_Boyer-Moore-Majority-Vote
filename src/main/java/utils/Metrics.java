@@ -8,14 +8,12 @@ import java.util.concurrent.atomic.AtomicLong;
  * comparisons: number of logical comparisons (==, <, >, etc.)
  * arrayAccesses: number of array element reads/writes
  * assignments: number of variable assignments (updates of counters, candidate variables, etc.)
- * memoryAllocations: number of memory allocations (new arrays, new objects; approximate in JVM)
  * Thread-safe: all counters use AtomicLong to allow safe increments
  */
 public class Metrics {
     private final AtomicLong comparisons = new AtomicLong(0);
     private final AtomicLong arrayAccesses = new AtomicLong(0);
     private final AtomicLong assignments = new AtomicLong(0);
-    private final AtomicLong memoryAllocations = new AtomicLong(0); // approximate
 
     // Comparisons
     public void incComparisons() { comparisons.incrementAndGet(); }
@@ -32,14 +30,16 @@ public class Metrics {
     public void addAssignments(long delta) { assignments.addAndGet(delta); }
     public long getAssignments() { return assignments.get(); }
 
-    // Memory allocations
-    public void incMemoryAllocations() { memoryAllocations.incrementAndGet(); }
-    public void addMemoryAllocations(long delta) { memoryAllocations.addAndGet(delta); }
-    public long getMemoryAllocations() { return memoryAllocations.get(); }
+
+    public void Reset(){
+        comparisons.set(0);
+        arrayAccesses.set(0);
+        assignments.set(0);
+    }
 
     @Override
     public String toString() {
-        return String.format("comparisons=%d,arrayAccesses=%d,assignments=%d,memoryAllocations=%d",
-                getComparisons(), getArrayAccesses(), getAssignments(), getMemoryAllocations());
+        return String.format("comparisons=%d,arrayAccesses=%d,assignments=%d",
+                getComparisons(), getArrayAccesses(), getAssignments());
     }
 }
