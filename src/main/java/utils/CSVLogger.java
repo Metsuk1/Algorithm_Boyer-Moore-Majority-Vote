@@ -24,7 +24,7 @@ public class CSVLogger implements AutoCloseable {
         writer = new FileWriter(file, append);
         // Write header only once for a new file
         if (!exists || !append) {
-            writer.write("Algorithm_Name,n,timeMs,comparisons,arrayAccesses,assignments,allocations,maxDepth\n");
+            writer.write("Algorithm_Name,n,timeMs,comparisons,arrayAccesses,assignments\n");
         }
     }
 
@@ -43,8 +43,7 @@ public class CSVLogger implements AutoCloseable {
                 timeMs + "," +
                 m.getComparisons() + "," +
                 m.getArrayAccesses() + "," +
-                m.getAssignments() + "," +
-                m.getMemoryAllocations() + "," + "\n");
+                m.getAssignments() + "," + "\n");
         writer.flush();
     }
 
