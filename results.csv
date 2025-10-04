@@ -1,0 +1,2 @@
+Algorithm_Name,n,timeMs,comparisons,arrayAccesses,assignments
+Boyer_Moore,432,1.5619,850,864,459,
