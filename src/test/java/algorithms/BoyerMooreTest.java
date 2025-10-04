@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import utils.Metrics;
 
 
+import java.util.Arrays;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -75,5 +76,16 @@ class BoyerMooreTest {
         int[] b = {2,1,2,1}; // no majority (2 appears 2 out of 4)
         r = BoyerMoore.findMajority(b, m);
         assertFalse(r.isPresent());
+    }
+
+    @Test
+    void testOptimizedMajority() {
+        int[] arr = new int[1000];
+        Arrays.fill(arr, 1); // Majority element
+        Metrics metrics = new Metrics();
+        Optional<Integer> result = BoyerMoore.findMajority(arr, metrics);
+        assertTrue(result.isPresent());
+        assertEquals(1, result.get());
+
     }
 }

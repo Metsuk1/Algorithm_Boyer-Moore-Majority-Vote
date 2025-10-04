@@ -65,6 +65,7 @@ public class BoyerMoore {
         for(int i = 0; i < arr.length; i++){
             metrics.incArrayAccesses();
             int v = arr[i];
+            metrics.incAssignments(); // v assigned from arr[i]
 
             if(!hasCandidate){
                 // assign candidate = v; count = 1
@@ -72,6 +73,7 @@ public class BoyerMoore {
                 hasCandidate = true;
                 count = 1;
                 metrics.incAssignments(); // assign candidate
+                metrics.incAssignments(); // hasCandidate
                 metrics.incAssignments(); // assign count
                 continue;
             }
@@ -100,12 +102,19 @@ public class BoyerMoore {
 
         //Second pass - verification
         int occurrences  = 0;
+        int threshold = arr.length / 2;
         for(int i = 0; i < arr.length; i++){
             metrics.incArrayAccesses();// we need to accesses each element in the array
             metrics.incComparisons(); // comparing arr[i] to candidate
 
             if(arr[i] == candidate){
                 occurrences++;
+                metrics.incAssignments();
+                if (occurrences > threshold) {
+                    metrics.incComparisons(); // occurrences > threshold
+                    // Early exit if majority is confirmed
+                    break;
+                }
             }
         }
 
