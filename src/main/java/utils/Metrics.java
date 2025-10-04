@@ -31,7 +31,7 @@ public class Metrics {
     public long getAssignments() { return assignments.get(); }
 
 
-    public void Reset(){
+    public void reset(){
         comparisons.set(0);
         arrayAccesses.set(0);
         assignments.set(0);
