@@ -1,6 +1,2 @@
 Algorithm_Name,n,timeMs,comparisons,arrayAccesses,assignments
-Boyer_Moore,100,1.2714,197,198,256,
-Boyer_Moore,500,0.1763,967,993,1331,
-Boyer_Moore,1000,0.2319,1963,1990,2584,
-Boyer_Moore,5000,1.0695,9905,9926,12566,
-Boyer_Moore,10000,1.9415,19881,19894,25042,
+Boyer_Moore,543223322,18768.204,1081072490,1081072505,1358058353,

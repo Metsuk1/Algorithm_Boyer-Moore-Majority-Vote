@@ -27,7 +27,7 @@ import java.util.Optional;
 public class BoyerMoore {
     private final Metrics metrics;
 
-    private BoyerMoore(Metrics metrics) {
+    BoyerMoore(Metrics metrics) {
         this.metrics = metrics;
     }
 

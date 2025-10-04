@@ -40,6 +40,6 @@ public class BoyerMooreBenchmark {
 
     @TearDown
     public void tearDown() {
-        metrics.Reset(); // reset metrics after each start
+        metrics.reset(); // reset metrics after each start
     }
 }
