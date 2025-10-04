@@ -1,0 +1,1 @@
+JMH S 29 becnhmark.BoyerMooreBenchmark S 71 becnhmark.jmh_generated.BoyerMooreBenchmark_measureFindMajority_jmhTest S 19 measureFindMajority S 11 AverageTime E A 1 1 1 E I 1 5 T 3 1 s E I 1 5 T 3 1 s E I 1 1 E E L 2 6 -Xms2g 6 -Xmx2g E E M 1 4 size 5 8 xAAMAADA 8 1AAMAADA 16 xAAMAADAwAA===== 16 1AAMAADAwAA===== 16 xAAMAADAwAAMAA== U 12 MICROSECONDS E E 

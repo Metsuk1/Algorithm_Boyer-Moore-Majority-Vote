@@ -12,6 +12,9 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * This class needed for testing BoyerMoore algorithm with using Junit 5
+ */
 class BoyerMooreTest {
     private Metrics metrics;
 

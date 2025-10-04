@@ -108,7 +108,7 @@ public class CLI {
     /**
      * Generates an array with a fixed majority element (1).
      */
-    private static int[] generateArrayWithMajority(int size, Random random) {
+    public static int[] generateArrayWithMajority(int size, Random random) {
         int majorityElement = 1; // fixed value for correctnes testing
         int[] arr = new int[size];
         for (int i = 0; i < size / 2 + 1; i++) {
@@ -129,7 +129,7 @@ public class CLI {
     /**
      * Generates an array with a random majority element.
      */
-    private static int[] generateArrayWithRandomMajority(int size, Random random) {
+    public static int[] generateArrayWithRandomMajority(int size, Random random) {
         int majorityElement = random.nextInt(100); // Random element 0-99
         int[] arr = new int[size];
         for (int i = 0; i < size / 2 + 1; i++) {
